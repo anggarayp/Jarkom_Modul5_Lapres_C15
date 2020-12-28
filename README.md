@@ -357,10 +357,10 @@ SURABAYA disetting sehingga setiap request dari client yang mengakses DNS Server
 - Pada *UML Surabaya* :
 
   ```
-  iptables -t nat -A PREROUTING -p tcp -d 10.151.77.131 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.1.6:80
-  iptables -t nat -A PREROUTING -p tcp -d 10.151.77.131 -j DNAT --to-destination 192.168.2.5:80
-  iptables -t nat -A POSTROUTING -p tcp -d 192.168.1.6 --dport 80 -j SNAT --to-source 10.151.77.131
-  iptables -t nat -A POSTROUTING -p tcp -d 192.168.2.5 --dport 80 -j SNAT --to-source 10.151.77.131
+  iptables -t nat -A PREROUTING -p tcp -d 10.151.77.131 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.0.10:80
+  iptables -t nat -A PREROUTING -p tcp -d 10.151.77.131 -j DNAT --to-destination 192.168.0.11:80
+  iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.10 --dport 80 -j SNAT --to-source 10.151.77.131
+  iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.11 --dport 80 -j SNAT --to-source 10.151.77.131
   ```
 
 - Testing
