@@ -351,7 +351,7 @@ iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 07:00 --timestop 17:00 -
 iptables -A INPUT -s 192.168.2.0/24 -j REJECT
 ```
 
-- Testing
+- Testing pada *UML Gresik* dan *UML Malang* :
 
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
@@ -368,7 +368,7 @@ Pada *UML Malang* tambahkan :
 iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:00 --timestop 17:00 -j REJECT
 ```
 
-- Testing
+- Testing pada *UML Gresik* dan *UML Malang* :
 
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s "2020-12-28 16:10:10"```
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
