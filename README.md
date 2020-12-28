@@ -266,21 +266,28 @@ Memberikan ip pada subnet SIDOARJO dan GRESIK secara dinamis menggunakan bantuan
   4. Buka file ```nano /etc/dhcp/dhcpd.conf```
   5. Tambahkan :
 
-  ```
-  subnet 10.151.83.0 netmask 255.255.255.0 {  
-          option routers 10.151.83.91; 
+  ```  
+  subnet 10.151.77.128 netmask 255.255.255.248 {
+      option routers 10.151.77.129;
+      option broadcast-address 10.151.77.111;
   }
-
-  subnet 192.168.0.0 netmask 255.255.255.0 {
-      option routers 10.151.83.89;
-      option broadcast-address 192.168.0.255;
-      option domain-name-servers 10.151.83.90;
+  subnet 192.168.1.0 netmask 255.255.255.0 {
+      range 192.168.1.2 192.168.1.213;
+      option routers 192.168.1.1;
+      option broadcast-address 192.168.1.255;
+      option domain-name-servers 10.151.77.131;
+      option domain-name-servers 202.46.129.2;
+      default-lease-time 600;
+      max-lease-time 7200;
   }
-
   subnet 192.168.2.0 netmask 255.255.255.0 {
-      option routers 10.151.83.89;
+      range 192.168.2.2 192.168.2.203;
+      option routers 192.168.2.1;
       option broadcast-address 192.168.2.255;
-      option domain-name-servers 10.151.83.90;
+      option domain-name-servers 10.151.77.131;
+      option domain-name-servers 202.46.129.2;
+      default-lease-time 600;
+      max-lease-time 7200;
   }
   ```
 
