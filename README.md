@@ -228,18 +228,14 @@ Memberikan ip pada subnet SIDOARJO dan GRESIK secara dinamis menggunakan bantuan
 - *UML Surabaya, Batu, dan Kediri*
 
   1. Buka file ```nano /etc/sysctl.conf```
-
   2. Tambahkan :
 
   ```
   net.ipv4.ip_forward=1
   net.ipv4.conf.all.accept_source_route = 1
   ```
-
   3. Lakukan ```sysctl -p```
-
   4. Install DHCP RELAY : ```apt-get install isc-dhcp-relay -y```
-
   5. Buka filenya ```nano /etc/default/isc-dhcp-relay```
 
   ![tree](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/kediri%20dhcp%20relay.png)
@@ -247,13 +243,9 @@ Memberikan ip pada subnet SIDOARJO dan GRESIK secara dinamis menggunakan bantuan
 - *UML Mojokerto*
 
   1. Install DHCP : ```apt-get install isc-dhcp-server -y```
-
   2. Buka filenya ```nano /etc/default/isc-dhcp-server```
-
   3. Menambahkan ```INTERFACES="eth0"```
-
   4. Buka file ```nano /etc/dhcp/dhcpd.conf```
-
   5. Tambahkan :
 
   ```
@@ -299,7 +291,6 @@ Mendrop semua akses SSH dari luar Topologi (UML) kita pada server yang memiliki 
 - Testing
 
   1. Install netcat di *UML Mojokerto* dan *UML Malang* : ```apt-get install netcat```
-  
   2. Pada UML Mojokerto dan Malang, ketikkan : ```nc -l -p <nomor_port>```
   
 ### Nomor 3
@@ -315,7 +306,6 @@ Membatasi DHCP dan DNS server hanya boleh menerima maksimal 3 koneksi ICMP secar
 - Testing :
 
   1. Melakukan ping ke IP MALANG atau IP MOJOKERTO di 4 UML.
-  
   2. Jika saat di UML ke 4 tidak bisa melakukan ping, maka berhasil.
   
 ### Nomor 4
@@ -332,7 +322,6 @@ iptables -A INPUT -s 192.168.2.0/24 -j REJECT
 - Testing
 
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
-  
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
 
 ### Nomor 5
@@ -348,7 +337,6 @@ iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:01 --timestop 16:59 -
 - Testing
 
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
-  
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
 
 ### Nomor 6
@@ -364,13 +352,9 @@ SURABAYA disetting sehingga setiap request dari client yang mengakses DNS Server
 - Testing
   
   1. Install netcat pada *UML Probolinggo* dan *UML Madiun* : ```apt-get install netcat```
-  
   2. Pada Putty Yudhistira, ketikkan ``nc 10.151.77.90 22```
-  
   3. Pada UML MADIUN dan PROBOLINGGO, ketikkan ```nc -l -p 22```
-  
-  4. Ketikkan sesuatu
-  
+  4. Ketikkan apapun bebas
   5.Apabila hasilnya seperti gambar di bawah, maka konfigurasi berhasil
   
 ### Nomor 7
@@ -390,7 +374,5 @@ Semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap
 - Testing
 
   1. Jalankan iptablesnya
-  
   2. Pindah directory ke ```/var/log```
-  
   3. Ketikkan perintah ```tail messages```
