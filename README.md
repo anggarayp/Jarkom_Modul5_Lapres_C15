@@ -365,12 +365,12 @@ Akses dari subnet GRESIK hanya diperbolehkan pada pukul 17.00 hingga pukul 07.00
 Pada *UML Malang* tambahkan :
 
 ```
-iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:01 --timestop 16:59 -j REJECT
+iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:00 --timestop 17:00 -j REJECT
 ```
 
 - Testing
 
-  1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
+  1. Ubah tanggal dan jam hari ini dengan perintah ```date -s "2020-12-28 16:10:10"```
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
   
   ![no5](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/5.jpg)
