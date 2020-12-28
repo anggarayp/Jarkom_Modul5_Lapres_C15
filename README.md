@@ -278,7 +278,7 @@ Agar topologi yang dibuat dapat mengakses keluar, kita mengkonfigurasi SURABAYA 
 
 - Testing dengan cara ping **google.com** di UML Surabaya
 
-  ![no1](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  ![no1](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/1.jpg)
 
 ### Nomor 2
 
@@ -296,7 +296,7 @@ Mendrop semua akses SSH dari luar Topologi (UML) kita pada server yang memiliki 
   2. Pada putty Yudhistira ```nc 10.151.77.131 22```
   3. Pada UML Mojokerto dan Malang, ketikkan : ```nc -l -p <nomor_port>```
   
-  ![no2](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  ![no2](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/2.png)
   
 ### Nomor 3
 
@@ -313,7 +313,7 @@ Membatasi DHCP dan DNS server hanya boleh menerima maksimal 3 koneksi ICMP secar
   1. Melakukan ping ke IP MALANG atau IP MOJOKERTO di 4 UML.
   2. Jika saat di UML ke 4 tidak bisa melakukan ping, maka berhasil.
   
-  ![no3](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  ![no3](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/3.jpg)
   
 ### Nomor 4
 
@@ -331,7 +331,7 @@ iptables -A INPUT -s 192.168.2.0/24 -j REJECT
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
   
-  ![no4](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  ![no4](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/4.jpg)
   
 ### Nomor 5
 
@@ -348,7 +348,7 @@ iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:01 --timestop 16:59 -
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
   
-  ![no5](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  ![no5](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/5.jpg)
   
 ### Nomor 6
 
@@ -365,19 +365,15 @@ SURABAYA disetting sehingga setiap request dari client yang mengakses DNS Server
 
 - Testing
   
-  1. Install netcat pada *UML Probolinggo* dan *UML Madiun* : ```apt-get install netcat```
-  2. Pada Putty Yudhistira, ketikkan ``nc 10.151.77.131 22```
-  3. Pada UML MADIUN dan PROBOLINGGO, ketikkan ```nc -l -p 22```
-  4. Ketikkan apapun bebas
-  5. Apabila hasilnya seperti gambar di bawah, maka konfigurasi berhasil
-  
   1. Install netcat pada *UML Malang*, *UML Probolinggo*, *UML Madiun*, *UML Surabaya*, dan *UML Gresik (Client)*  : ```apt-get install netcat```
   2. Pada UML Madiun ketikkan : ```nc -l -p 80```
   3. Pada UML Probolinggo ketikkan : ```nc -l -p 80```
   4. Pada UML Client (Gresik) ketikkan : ```nc ipMalang 80```
   5. Ketik bebas apapun di UML Gresik nanti muncul di UML Madiun/ Probolinggo
   
-  ![no6](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  ![no6](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/6.jpg)
+  
+  ![no61](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/6.1.jpg)
   
 ### Nomor 7
 
@@ -396,7 +392,6 @@ Semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap
 - Testing
 
   1. Jalankan iptablesnya
-  2. Pindah directory ke ```/var/log```
-  3. Ketikkan perintah ```tail messages```
+  2. Pindah directory ke ```/var/log/messages```
   
-  ![no7](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  ![no7](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/7.jpg)
