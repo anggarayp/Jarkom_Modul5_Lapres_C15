@@ -11,12 +11,12 @@ Lapres Modul 5 Jarkom
 * [Soal C](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#soal-c)
 * [Soal D](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#soal-d)
 * [No. 1](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#nomor-1)
-* [No. 2]()
-* [No. 3]()
-* [No. 4]()
-* [No. 5]()
-* [No. 6]()
-* [No. 7]()
+* [No. 2](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#nomor-2)
+* [No. 3](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#nomor-3)
+* [No. 4](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#nomor-4)
+* [No. 5](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#nomor-5)
+* [No. 6](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#nomor-6)
+* [No. 7](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15#nomor-7)
 
 ![topo](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/topo.png)
 
