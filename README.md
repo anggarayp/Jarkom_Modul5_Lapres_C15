@@ -276,7 +276,9 @@ Agar topologi yang dibuat dapat mengakses keluar, kita mengkonfigurasi SURABAYA 
   iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j SNAT --to source 10.151.76.66
   ```
 
-- Testing dengan cara ping **its.ac.id** di seluruh UML
+- Testing dengan cara ping **google.com** di UML Surabaya
+
+  ![no1](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
 
 ### Nomor 2
 
@@ -291,7 +293,10 @@ Mendrop semua akses SSH dari luar Topologi (UML) kita pada server yang memiliki 
 - Testing
 
   1. Install netcat di *UML Mojokerto* dan *UML Malang* : ```apt-get install netcat```
-  2. Pada UML Mojokerto dan Malang, ketikkan : ```nc -l -p <nomor_port>```
+  2. Pada putty Yudhistira ```nc 10.151.77.131 22```
+  3. Pada UML Mojokerto dan Malang, ketikkan : ```nc -l -p <nomor_port>```
+  
+  ![no2](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
   
 ### Nomor 3
 
@@ -308,6 +313,8 @@ Membatasi DHCP dan DNS server hanya boleh menerima maksimal 3 koneksi ICMP secar
   1. Melakukan ping ke IP MALANG atau IP MOJOKERTO di 4 UML.
   2. Jika saat di UML ke 4 tidak bisa melakukan ping, maka berhasil.
   
+  ![no3](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  
 ### Nomor 4
 
 Akses dari subnet SIDOARJO hanya diperbolehkan pada pukul 07.00 - 17.00 pada hari Senin sampai Jumat. Selain itu akan diREJECT.
@@ -323,7 +330,9 @@ iptables -A INPUT -s 192.168.2.0/24 -j REJECT
 
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
-
+  
+  ![no4](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  
 ### Nomor 5
 
 Akses dari subnet GRESIK hanya diperbolehkan pada pukul 17.00 hingga pukul 07.00 setiap harinya. Selain itu akan diREJECT.
@@ -338,7 +347,9 @@ iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:01 --timestop 16:59 -
 
   1. Ubah tanggal dan jam hari ini dengan perintah ```date -s '2020-12-27 :::'```
   2. Cek tanggal sudah benar atau belum dengan perintah ```date```
-
+  
+  ![no5](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
+  
 ### Nomor 6
 
 SURABAYA disetting sehingga setiap request dari client yang mengakses DNS Server akan didistribusikan secara bergantian pada PROBOLINGGO port 80 dan MADIUN port 80.
@@ -346,16 +357,27 @@ SURABAYA disetting sehingga setiap request dari client yang mengakses DNS Server
 - Pada *UML Surabaya* :
 
   ```
-  
+  iptables -t nat -A PREROUTING -p tcp -d 10.151.77.131 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.1.6:80
+  iptables -t nat -A PREROUTING -p tcp -d 10.151.77.131 -j DNAT --to-destination 192.168.2.5:80
+  iptables -t nat -A POSTROUTING -p tcp -d 192.168.1.6 --dport 80 -j SNAT --to-source 10.151.77.131
+  iptables -t nat -A POSTROUTING -p tcp -d 192.168.2.5 --dport 80 -j SNAT --to-source 10.151.77.131
   ```
 
 - Testing
   
   1. Install netcat pada *UML Probolinggo* dan *UML Madiun* : ```apt-get install netcat```
-  2. Pada Putty Yudhistira, ketikkan ``nc 10.151.77.90 22```
+  2. Pada Putty Yudhistira, ketikkan ``nc 10.151.77.131 22```
   3. Pada UML MADIUN dan PROBOLINGGO, ketikkan ```nc -l -p 22```
   4. Ketikkan apapun bebas
-  5.Apabila hasilnya seperti gambar di bawah, maka konfigurasi berhasil
+  5. Apabila hasilnya seperti gambar di bawah, maka konfigurasi berhasil
+  
+  1. Install netcat pada *UML Malang*, *UML Probolinggo*, *UML Madiun*, *UML Surabaya*, dan *UML Gresik (Client)*  : ```apt-get install netcat```
+  2. Pada UML Madiun ketikkan : ```nc -l -p 80```
+  3. Pada UML Probolinggo ketikkan : ```nc -l -p 80```
+  4. Pada UML Client (Gresik) ketikkan : ```nc ipMalang 80```
+  5. Ketik bebas apapun di UML Gresik nanti muncul di UML Madiun/ Probolinggo
+  
+  ![no6](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
   
 ### Nomor 7
 
@@ -376,3 +398,5 @@ Semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap
   1. Jalankan iptablesnya
   2. Pindah directory ke ```/var/log```
   3. Ketikkan perintah ```tail messages```
+  
+  ![no7](https://github.com/anggarayp/Jarkom_Modul5_Lapres_C15/blob/main/Screenshots/)
