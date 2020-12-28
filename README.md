@@ -151,6 +151,9 @@ Membuat subnetting dengan teknik **CIDR** atau **VLSM**. Kelompok kami menggunak
   *UML Sidoarjo (Client)*
 
   ```
+  auto lo
+  iface lo inet loopback
+  
   auto eth0
   iface eth0 inet static
   address 192.168.2.2
@@ -161,6 +164,9 @@ Membuat subnetting dengan teknik **CIDR** atau **VLSM**. Kelompok kami menggunak
   *UML Gresik (Client)*
 
   ```
+  auto lo
+  iface lo inet loopback
+  
   auto eth0
   iface eth0 inet static
   address 192.168.1.2
@@ -171,6 +177,9 @@ Membuat subnetting dengan teknik **CIDR** atau **VLSM**. Kelompok kami menggunak
   *UML Probolinggo (Server)*
 
   ```
+  auto lo
+  iface lo inet loopback
+  
   auto eth0
   iface eth1 inet static
   address 192.168.0.10
@@ -181,6 +190,9 @@ Membuat subnetting dengan teknik **CIDR** atau **VLSM**. Kelompok kami menggunak
   *UML Mojokerto (Server)*
 
   ```
+  auto lo
+  iface lo inet loopback
+  
   auto eth0
   iface eth0 inet static
   address 10.151.77.130
@@ -191,6 +203,9 @@ Membuat subnetting dengan teknik **CIDR** atau **VLSM**. Kelompok kami menggunak
   *UML Malang (Server)*
 
   ```
+  auto lo
+  iface lo inet loopback
+  
   auto eth0
   iface eth0 inet static
   address 10.151.77.131
@@ -201,6 +216,9 @@ Membuat subnetting dengan teknik **CIDR** atau **VLSM**. Kelompok kami menggunak
   *UML Madiun (Server)*
 
   ```
+  auto lo
+  iface lo inet loopback
+  
   auto eth0
   iface eth0 inet static
   address 192.168.0.11
